@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Nav from './nav';
 import './footer.css';
+import Album from "./Album";
 
 import axios from 'axios';
 
-class album extends React.Component{
+class albums extends React.Component{
   constructor(){
     super();
     this.state = {
@@ -32,15 +33,7 @@ render(){
 
 
        {this.state.albums.map(album => (
-          <div key={album.id} className="col-lg-3 col-md-4 col-sm-6 col-12">
-          <div  >
-               <a href={album.url}><img className="img" src={album.thumbnailUrl}  /></a>
-             <h3>{album.title}</h3>
-             <br/> <br/> <br/>
-          </div>
-
-
-         </div>
+          <Album key={album.id} url={album.url} thumbnailUrl={album.thumbnailUrl} title={album.title} />
           ))}
 
         </div>
@@ -56,4 +49,4 @@ render(){
 
 }
 
-export default album;
+export default albums;

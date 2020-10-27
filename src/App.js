@@ -5,7 +5,7 @@ import Nav from './nav.js';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from './footer';
 import home from './home';
-import album from './album';
+import albums from './albums';
 import notfound from './notfound';
 
 
@@ -19,21 +19,21 @@ function App() {
 
   return (
     <div>
-    
-   
-    
+
+
+
      <Router>
      <Nav/>
        <Switch>
       <Route path ="/" exact component={home} />
-      <Route path ="/album" component={album} />
-      <Route path ="/notfound" component={notfound} />
+      <Route path ="/album" component={albums} />
+      <Route component={notfound} />
       </Switch>
      </Router>
-    
+
      <Footer />
      </div>
-   
+
   );
 }
 
