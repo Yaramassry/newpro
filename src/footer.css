@@ -1,35 +1,28 @@
 .main-footer{
-    margin-top: 1rem;
-    padding: 1rem;
-
+    padding: 0.5rem;
     color: white;
     background-color:  rgb(38, 34, 46);
     /* padding-top: 0.05em; */
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     font-family: 'Indie Flower' , cursive;
 }
-.footer-home{
-    padding-bottom: 10rem;
-}
+
 
     .footer{
      
-        height: 10pc;
+        height: 5pc;
         background-color:  rgb(216, 207, 211);
         
     }
     
   
-    .row{
-        display:flex ;
-    flex-direction: row;
-    }
+    
     .call{
-        padding-left: 30em;
-    }
-    .list-unstyled{
+        margin-right: 2cm;
+    } 
+    /* .list-unstyled{
         font-weight: bold;
+    } */
+    .col{
+        margin-left: 0.5cm;
     }

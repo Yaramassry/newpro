@@ -7,28 +7,24 @@ import Footer from './footer';
 import home from './home';
 import albums from './albums';
 import notfound from './notfound';
-
-
+import store from './store';
+import {Provider} from 'react-redux'; 
 
 
 function App() {
-
-
-
-
-
   return (
     <div>
-
-
-
      <Router>
      <Nav/>
+     <div className="container main_container bg-white">
        <Switch>
       <Route path ="/" exact component={home} />
+         <Provider store = {store}>
       <Route path ="/album" component={albums} />
+         </Provider>
       <Route component={notfound} />
       </Switch>
+      </div>
      </Router>
 
      <Footer />

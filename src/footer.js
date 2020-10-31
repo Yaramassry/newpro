@@ -3,7 +3,7 @@ import './footer.css';
 
 const Footer =()=> {
   return(
-    <div className="main-footer">
+    <div className="main-footer container-fluid">
         
            <div className="row">
                {/*c1*/}
@@ -26,9 +26,9 @@ const Footer =()=> {
                   </ul>
                   </div>
            </div>
-          <hr/>
-           <div className="row">
-             <p className="col-sm"></p>
+         
+           <div className="text-center">
+            
                  &copy;{new Date().getFullYear()} Connect Us| All Right Reserved | Terms Of service |Privacy
 
            </div>
