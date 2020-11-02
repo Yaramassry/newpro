@@ -6,15 +6,12 @@ const initialState = {
     albums: []
 }
 
-const reducers = (state , action) => {
+const reducers = (state = initialState , action) => {
     switch (action.type) {
-        case 'true' : return (
-            axios.get(`https://jsonplaceholder.typicode.com/photos`)
-        .then(res => {
-          const photos = res.data;
-          this.setState({ albums: photos });
-        }))
-     
+        case 'getAlbums' :
+            return {
+                albums: action.payload
+            }
         default : return state ;
     }
 }

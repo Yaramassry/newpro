@@ -4,24 +4,27 @@ import './footer.css';
 import Album from "./Album";
 import {connect} from 'react-redux';
 
+import {getAlbums} from './actions';
 
-//import axios from 'axios';
+
+import axios from 'axios';
 
 class albums extends React.Component{
-  // constructor(){
-  //   super();
+   constructor(){
+     super();
     // this.state = {
     //   albums: []
     // }
-  // }
+   }
 
-  // componentDidMount() {
-  //   axios.get(`https://jsonplaceholder.typicode.com/photos`)
-  //     .then(res => {
-  //       const photos = res.data;
-  //       this.setState({ albums: photos });
-  //     })
-  // }
+   componentDidMount() {
+     axios.get(`https://jsonplaceholder.typicode.com/photos`)
+       .then(res => {
+         const photos = res.data;
+         this.props.getAlbums(photos)
+         //this.setState({ albums: photos });
+       })
+   }
 
 
   
@@ -32,12 +35,10 @@ render(){
 <div>
 
 <div className="container">
-
-
  <div className="row">
 
 
-       {this.state.albums.map(album => (
+       {this.props.photos.map(album => (
           <Album key={album.id} url={album.url} thumbnailUrl={album.thumbnailUrl} title={album.title} />
           ))}
 
@@ -55,11 +56,11 @@ render(){
 
 }
 const mapStateToProps = (state) => {
-  return { album: state.album}
+  return { photos: state.albums}
 }
 const mapDispatchtoprops =(dispatch) => {
   return {
-    true: ()=> dispatch({type:'TRUE'}),
+    getAlbums: (albums)=> dispatch(getAlbums(albums)),
  
   }
 
